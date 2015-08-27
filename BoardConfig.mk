@@ -1,6 +1,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+# Prepared by linerty
 
 DEVICE_FOLDER := device/lenovo/p1m
 
@@ -49,7 +50,7 @@ TARGET_PREBUILT_RECOVERY_KERNEL := $(DEVICE_FOLDER)/recovery/kernel
 TARGET_RECOVERY_INITRC := $(DEVICE_FOLDER)/recovery/init.rc
 TARGET_RECOVERY_FSTAB := $(DEVICE_FOLDER)/recovery/recovery.fstab
 BOARD_HAS_MTK := true
-BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_FOLDER)/mkmtkbootimg.mk
+# BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_FOLDER)/mkmtkbootimg.mk
 
 # File systems
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x01000000
@@ -64,7 +65,7 @@ BOARD_FLASH_BLOCK_SIZE := 512
 BOARD_HAS_LARGE_FILESYSTEM := true  
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/virtual/android_usb/android0/f_mass_storage/lun%d/file
 TWHAVE_SELINUX := true
-#Fix Wipe
+#Fix Wipe. Not work on omni.
 BOARD_NO_SECURE_DISCARD := true			# for cwm
 BOARD_SUPPRESS_SECURE_ERASE := true		# for omni
 
@@ -83,16 +84,6 @@ TARGET_RECOVERY_LCD_BACKLIGHT_PATH := \"/sys/class/leds/lcd-backlight/brightness
 BRIGHTNESS_SYS_FILE := "/sys/class/leds/lcd-backlight/brightness"
 
 # MTK hacks for hw
-# #TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
-# #NUM_FRAMEBUFFER_SURFACE_BUFFERS := 2
-# #TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
-# # VSYNC_EVENT_PHASE_OFFSET_NS := -5000000
-# #SF_VSYNC_EVENT_PHASE_OFFSET_NS := -5000000
-# # PRESENT_TIME_OFFSET_FROM_VSYNC_NS := 0
-
-# TWRP stuff
-# #USE_MINIKIN := true						# Enable Minikin text layout engine (will be the default soon)
-# #EXTENDED_FONT_FOOTPRINT := true			# Include an expanded selection of fonts
 TW_BOARD_CUSTOM_GRAPHICS := ../../../device/lenovo/p1m/recovery/graphics_5.1-mod.c
 TW_MAX_BRIGHTNESS := 255
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness

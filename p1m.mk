@@ -19,10 +19,7 @@ PRODUCT_NAME := p1m
 # recovery
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/recovery/file_contexts:root/file_contexts \
-#	$(LOCAL_PATH)/recovery/property_contexts:root/property_contexts \
-#	$(LOCAL_PATH)/recovery/seapp_contexts:root/seapp_contexts \
-#	$(LOCAL_PATH)/recovery/sepolicy:root/sepolicy \
-#	$(LOCAL_PATH)/recovery/service_contexts:root/service_contexts \
+	$(LOCAL_PATH)/recovery/libext4_utils.so:root/sbin/libext4_utils.so \
 	$(LOCAL_PATH)/recovery/ueventd.rc:root/ueventd.rc
 
 # Set insecure for root access and device specifics
